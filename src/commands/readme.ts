@@ -170,14 +170,7 @@ USAGE
     const bin = topic.name;
     const desc = template({ config })(topic.description || "").trim();
     let doc =
-      [
-        bin,
-        "=".repeat(bin.length),
-        "",
-        `---\ndescription: ${desc}\n---`,
-        "",
-        this.commands(config, commands),
-      ]
+      [`---\ndescription: ${desc}\n---`, "", this.commands(config, commands)]
         .join("\n")
         .trim() + "\n";
     fs.outputFileSync(file, doc);
@@ -196,13 +189,14 @@ USAGE
 
   renderCommand(config: Config.IConfig, c: Config.Command): string {
     this.debug("rendering command", c.id);
-    const title = template({ config, command: c })(c.description || "")
+    let title = template({ config, command: c })(c.description || "")
       .trim()
       .split("\n")[0];
     const help = new Help(config, { stripAnsi: true, maxWidth: columns });
-    const header = () => `### ${c.id}`;
+    const name = c.id.indexOf(":") !== -1 ? c.id.split(":")[1] : c.id;
+    const header = `### ${name.charAt(0).toUpperCase() + name.slice(1)}`;
     return compact([
-      header(),
+      header,
       title,
       "```\n" + help.command(c).trim() + "\n```",
       this.commandCode(config, c),
