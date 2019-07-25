@@ -167,7 +167,6 @@ USAGE
     topic: Config.Topic,
     commands: Config.Command[]
   ) {
-    const bin = topic.name;
     const desc = template({ config })(topic.description || "").trim();
     let doc =
       [`---\ndescription: ${desc}\n---`, "", this.commands(config, commands)]
