@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
   "name": "@oclif/dev-cli",
   "description": "helpers for oclif CLIs",
   "version": "1.22.2",
+=======
+  "name": "@celo/dev-cli",
+  "description": "Celo fork of @oclif/dev-cli",
+  "version": "2.0.1",
+>>>>>>> Make more lightweight
   "author": "Jeff Dickey @jdxcode",
   "bin": {
     "oclif-dev": "./bin/run"
