@@ -216,16 +216,8 @@ USAGE
       label = commandPath;
       version = process.env.OCLIF_NEXT_VERSION || version;
     }
-    const template =
-      plugin.pjson.oclif.repositoryPrefix ||
-      "<%- repo %>/blob/v<%- version %>/<%- commandPath %>";
-    return `_See code: [${label}](${_.template(template)({
-      repo,
-      version,
-      commandPath,
-      config,
-      c,
-    })})_`;
+    const template = plugin.pjson.oclif.repositoryPrefix || '<%- repo %>/blob/v<%- version %>/<%- commandPath %>'
+    return `_See code: [packages/cli/${label}](${_.template(template)({repo, version, commandPath, config, c})})_`
   }
 
   private repo(plugin: Config.IPlugin): string | undefined {
