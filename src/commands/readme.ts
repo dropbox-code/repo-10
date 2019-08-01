@@ -1,17 +1,19 @@
 // tslint:disable no-implicit-dependencies
 
-import { Command, flags } from "@oclif/command";
-import * as Config from "@oclif/config";
-import Help from "@oclif/plugin-help";
-import * as fs from "fs-extra";
-import * as _ from "lodash";
-import * as path from "path";
-import { URL } from "url";
-import { castArray, compact, sortBy, template, uniqBy } from "../util";
+import { Command, flags } from '@oclif/command'
+import * as Config from '@oclif/config'
+import Help from '@oclif/plugin-help'
+import * as fs from 'fs-extra'
+import * as _ from 'lodash'
+import * as path from 'path'
+import { URL } from 'url'
+import { castArray, compact, sortBy, template, uniqBy } from '../util'
 
-const normalize = require("normalize-package-data");
-const columns = parseInt(process.env.COLUMNS!, 10) || 120;
-const slugify = new (require("github-slugger") as any)();
+
+
+const normalize = require('normalize-package-data')
+const columns = parseInt(process.env.COLUMNS!, 10) || 120
+const slugify = new (require('github-slugger') as any)()
 
 export default class Readme extends Command {
   static description = `adds commands to README.md in current directory
@@ -50,27 +52,24 @@ Customize the code URL prefix by setting oclif.repositoryPrefix in package.json.
       await plugin.load();
       config.plugins.push(plugin);
     } catch {}
-    await config.runHook("init", { id: "readme", argv: this.argv });
-    let readme = await fs.readFile("README.md", "utf8");
-    let commands = config.commands;
-    commands = commands.filter((c) => !c.hidden);
-    commands = commands.filter((c) => c.pluginType === "core");
-    this.debug("commands:", commands.map((c) => c.id).length);
-    commands = uniqBy(commands, (c) => c.id);
-    commands = sortBy(commands, (c) => c.id);
-    readme = this.replaceTag(readme, "usage", this.usage(config));
-    readme = this.replaceTag(
-      readme,
-      "commands",
-      flags.multi
-        ? this.multiCommands(config, commands, flags.dir)
-        : this.commands(config, commands)
-    );
-    readme = this.replaceTag(readme, "toc", this.toc(config, readme));
+    await config.runHook('init', {id: 'readme', argv: this.argv})
+    // let readme = await fs.readFile('README.md', 'utf8')
+    let commands = config.commands
+    commands = commands.filter(c => !c.hidden)
+    commands = commands.filter(c => c.pluginType === 'core')
+    this.debug('commands:', commands.map(c => c.id).length)
+    commands = uniqBy(commands, c => c.id)
+    commands = sortBy(commands, c => c.id)
+    // readme = this.replaceTag(readme, 'usage', this.usage(config))
+    if (flags.multi) {
+      this.multiCommands(config, commands, flags.dir)
+    }
+    // readme = this.replaceTag(readme, 'commands', flags.multi ? this.multiCommands(config, commands, flags.dir) : this.commands(config, commands))
+    // readme = this.replaceTag(readme, 'toc', this.toc(config, readme))
 
-    readme = readme.trimRight();
-    readme += "\n";
-    await fs.outputFile("README.md", readme);
+    // readme = readme.trimRight()
+    // readme += '\n'
+    // await fs.outputFile('README.md', readme)
   }
 
   replaceTag(readme: string, tag: string, body: string): string {
