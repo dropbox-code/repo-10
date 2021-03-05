@@ -1,16 +1,35 @@
 import * as core from '@actions/core'
-import {wait} from './wait'
+import Jenkins from 'jenkins'
+
+async function getJenkinsClient(
+  baseUrl: string
+): Promise<Jenkins.JenkinsPromisifiedAPI> {
+  return Jenkins({
+    baseUrl,
+    promisify: true
+  })
+}
 
 async function run(): Promise<void> {
   try {
-    const ms: string = core.getInput('milliseconds')
-    core.debug(`Waiting ${ms} milliseconds ...`) // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true
+    const baseUrl: string = core.getInput('baseUrl')
 
-    core.debug(new Date().toTimeString())
-    await wait(parseInt(ms, 10))
-    core.debug(new Date().toTimeString())
+    core.info('Fetching Jenkins client')
+    const jenkinsClient = await getJenkinsClient(baseUrl)
 
-    core.setOutput('time', new Date().toTimeString())
+    const jobUrl: string = core.getInput('jobUrl')
+    const jobParamsString: string = core.getInput('jobParams')
+
+    const jobParams = JSON.parse(jobParamsString)
+
+    core.info(
+      `Triggering Jenkins job: ${jobUrl} with params: ${jobParamsString}`
+    )
+    await jenkinsClient.job.build(jobUrl, {
+      delay: '0sec',
+      parameters: jobParams
+    })
+    core.info(`Triggered Jenkins job: ${jobUrl}`)
   } catch (error) {
     core.setFailed(error.message)
   }
