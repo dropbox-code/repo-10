@@ -39,6 +39,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.run = exports.getJenkinsClient = void 0;
 const core = __importStar(__webpack_require__(186));
 const jenkins_1 = __importDefault(__webpack_require__(108));
 function getJenkinsClient(baseUrl) {
@@ -49,27 +50,38 @@ function getJenkinsClient(baseUrl) {
         });
     });
 }
+exports.getJenkinsClient = getJenkinsClient;
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const baseUrl = core.getInput('baseUrl');
+            const baseUrl = core.getInput('baseUrl', {
+                required: true
+            });
             core.info('Fetching Jenkins client');
             const jenkinsClient = yield getJenkinsClient(baseUrl);
-            const jobUrl = core.getInput('jobUrl');
+            const jobUrl = core.getInput('jobUrl', {
+                required: true
+            });
             const jobParamsString = core.getInput('jobParams');
             const jobParams = JSON.parse(jobParamsString);
-            core.info(`Triggering Jenkins job: ${jobUrl} with params: ${jobParamsString}`);
-            yield jenkinsClient.job.build(jobUrl, {
+            const buildParams = {
                 delay: '0sec',
                 parameters: jobParams
-            });
-            core.info(`Triggered Jenkins job: ${jobUrl}`);
+            };
+            const getJobResponse = yield jenkinsClient.job.get(jobUrl);
+            if (getJobResponse.nextBuildNumber === 1) {
+                core.warning(`Triggering Jenkins job: ${jobUrl} without params as it is the first execution`);
+                return jenkinsClient.job.build(jobUrl);
+            }
+            core.info(`Triggering Jenkins job: ${jobUrl} with params: ${JSON.stringify(buildParams)}`);
+            return jenkinsClient.job.build(jobUrl, buildParams);
         }
         catch (error) {
             core.setFailed(error.message);
         }
     });
 }
+exports.run = run;
 run();
 
 
