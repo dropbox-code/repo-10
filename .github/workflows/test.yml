@@ -14,4 +14,4 @@ jobs:
       - run: |
           npm install
       - run: |
-          npm run build && npm run package
+          npm run build && npm run all
