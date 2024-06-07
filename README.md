@@ -23,6 +23,13 @@
 >
 > Learn more about **Tabnine Enterprise** and self hosting options [here](https://www.tabnine.com/enterprise?utm_source=ide_marketplace&utm_medium=organic&utm_campaign=vscode_marketplace), or talk to a [Tabnine Enterprise expert](https://www.tabnine.com/?expert&utm_source=ide_marketplace&utm_medium=organic&utm_campaign=vscode_marketplace)
 
+<div align="center">
+  <a href="https://dash.plotly.com/project-maintenance">
+    <img src="https://dash.plotly.com/assets/images/maintained-by-plotly.png" width="400px" alt="Maintained by Plotly">
+  </a>
+</div>
+
+
 ## Code faster with AI code completions
 
 ![Tabnine main completions](https://raw.githubusercontent.com/codota/tabnine-vscode/master/assets/completions-main.gif)
