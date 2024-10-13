@@ -3,6 +3,30 @@
 All notable changes to the LaunchDarkly Client-Side SDK for .NET will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org).
 
+## [5.0.0](https://github.com/dropbox-code/repo-10/compare/v5.2.1...5.0.0) (2024-10-13)
+
+
+### Features
+
+* adds init async with timeout and deprecated non-timeout init functions ([#95](https://github.com/dropbox-code/repo-10/issues/95)) ([41e70f2](https://github.com/dropbox-code/repo-10/commit/41e70f2c49e864da13648bd85c2c427111e502cc))
+* adds MAUI support ([d01a865](https://github.com/dropbox-code/repo-10/commit/d01a865aa83c6cc699c3d2ff528ce256f169ecdc))
+* adds MAUI support ([#66](https://github.com/dropbox-code/repo-10/issues/66)) ([112c2fb](https://github.com/dropbox-code/repo-10/commit/112c2fb7d54c31d88c3a1ffdd9aec88911f149de))
+* Always inline contexts for feature events ([c658bee](https://github.com/dropbox-code/repo-10/commit/c658beee27cd871c8ad91942ac5a04b29b8338bd))
+* Redact anonymous attributes within feature events ([c658bee](https://github.com/dropbox-code/repo-10/commit/c658beee27cd871c8ad91942ac5a04b29b8338bd))
+
+
+### Bug Fixes
+
+* Bump LaunchDarkly.InternalSdk to 3.4.0 ([#91](https://github.com/dropbox-code/repo-10/issues/91)) ([c658bee](https://github.com/dropbox-code/repo-10/commit/c658beee27cd871c8ad91942ac5a04b29b8338bd))
+* fixes issue where first flag listener callback was not triggered… ([#97](https://github.com/dropbox-code/repo-10/issues/97)) ([6bf8ec1](https://github.com/dropbox-code/repo-10/commit/6bf8ec160ee29984928bb7320ddd1f6f8580d7a9))
+* updating deprecated AndroidClientHandler to AndroidMessageHandler ([973b38c](https://github.com/dropbox-code/repo-10/commit/973b38ccd59a232bf47384b20d8d8bbda6017a6e))
+* updating deprecated AndroidClientHandler to AndroidMessageHandler ([#69](https://github.com/dropbox-code/repo-10/issues/69)) ([3dc9dba](https://github.com/dropbox-code/repo-10/commit/3dc9dbaac918555691281322ea15ea94bbe29e5a))
+
+
+### Miscellaneous Chores
+
+* release 5.0.0 ([#83](https://github.com/dropbox-code/repo-10/issues/83)) ([de859bc](https://github.com/dropbox-code/repo-10/commit/de859bc63555488a6361df3a3e28cdf253df3b45))
+
 ## [5.2.1](https://github.com/launchdarkly/dotnet-client-sdk/compare/5.2.0...5.2.1) (2024-06-05)
 
 
