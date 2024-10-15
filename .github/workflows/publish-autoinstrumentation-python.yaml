@@ -253,7 +253,7 @@ jobs:
     - continue-on-error: true
       id: meta
       name: Docker meta
-      uses: docker/metadata-action@v3.7.0
+      uses: docker/metadata-action@v5.5.1
       with:
         images: ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python
         tags: 'type=match,pattern=v(.*),group=1,value=v${{ env.VERSION }}
