@@ -277,7 +277,7 @@ jobs:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
     - continue-on-error: true
       name: Build and push
-      uses: docker/build-push-action@v4
+      uses: docker/build-push-action@v6
       with:
         context: .
         labels: ${{ steps.meta.outputs.labels }}
