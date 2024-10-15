@@ -255,7 +255,7 @@ jobs:
       uses: actions/checkout@v3
     - continue-on-error: true
       name: Lint
-      uses: golangci/golangci-lint-action@v3
+      uses: golangci/golangci-lint-action@v6
       with:
         args: -v
         version: v1.45
