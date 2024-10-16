@@ -12,7 +12,7 @@
   "author": "",
   "license": "GPL3",
   "dependencies": {
-    "@rsksmart/bridge-state-data-parser": "^1.2.0",
+    "@rsksmart/bridge-state-data-parser": "^2.0.0",
     "@rsksmart/btc-eth-unit-converter": "^1.0.0",
     "@rsksmart/btc-rsk-derivation": "^0.0.2",
     "@rsksmart/pmt-builder": "^3.0.0",
