@@ -252,7 +252,7 @@ jobs:
       with:
         fetch-depth: 0
     - continue-on-error: true
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         cache: pip
         cache-dependency-path: ./docs/scripts/requirements.txt
