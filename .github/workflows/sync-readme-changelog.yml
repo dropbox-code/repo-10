@@ -266,7 +266,7 @@ jobs:
         \ application/json' \\\n    --data \"$payload\"\n"
     - continue-on-error: true
       name: Announce New Release in Slack
-      uses: slackapi/slack-github-action@v1.24.0
+      uses: slackapi/slack-github-action@v1.27.0
       with:
         channel-id: C063MQJMKJN
         payload: "{\n    \"text\": \"New Release: Branch iOS SDK v${{ github.event.release.tag_name\
