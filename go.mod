@@ -48,7 +48,7 @@ require (
 	github.com/google/renameio/v2 v2.0.0
 	github.com/google/uuid v1.2.0
 	github.com/gorilla/mux v1.8.0
-	github.com/gorilla/websocket v1.4.2
+	github.com/gorilla/websocket v1.5.3
 	github.com/grafana/dskit v0.0.0-20220809080451-26c1b619d059
 	github.com/grafana/go-gelf/v2 v2.0.1
 	github.com/grafana/regexp v0.0.0-20220304100321-149c8afcd6cb
