@@ -15,7 +15,7 @@ require (
 	github.com/StackExchange/dnscontrol/v3 v3.27.1
 	github.com/akamai/AkamaiOPEN-edgegrid-golang v1.2.2
 	github.com/alecthomas/kingpin v2.2.5+incompatible
-	github.com/aliyun/alibaba-cloud-sdk-go v1.62.4
+	github.com/aliyun/alibaba-cloud-sdk-go v1.63.28
 	github.com/ans-group/sdk-go v1.10.4
 	github.com/aws/aws-sdk-go v1.44.136
 	github.com/bodgit/tsig v1.2.0
@@ -189,7 +189,7 @@ require (
 	google.golang.org/protobuf v1.28.1 // indirect
 	gopkg.in/go-playground/validator.v9 v9.31.0 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
-	gopkg.in/ini.v1 v1.66.6 // indirect
+	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/resty.v1 v1.12.0 // indirect
 	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
