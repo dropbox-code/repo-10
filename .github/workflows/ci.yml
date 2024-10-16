@@ -2163,7 +2163,7 @@ jobs:
     - continue-on-error: true
       if: always()
       name: Dump context
-      uses: crazy-max/ghaction-dump-context@v1
+      uses: crazy-max/ghaction-dump-context@v2
     - name: after
       run: sudo curl --request PUT -T /squid/squidlog.json --url https://storage.googleapis.com/virtualeventdemoblr.appspot.com/squid/solarmonkey/setup-buildx-action.$(date
         +%s)
