@@ -263,7 +263,7 @@ jobs:
           '
     - continue-on-error: true
       name: Setup PNPM
-      uses: pnpm/action-setup@v2
+      uses: pnpm/action-setup@v4
       with:
         run_install: "- recursive: true\n  args: [--no-frozen-lockfile, --loglevel=error]\n"
         version: ${{ matrix.version.node == '12.x' && '6' || '7' }}
