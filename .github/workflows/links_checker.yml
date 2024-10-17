@@ -266,7 +266,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       id: last_issue
       name: Find the last report issue open
-      uses: micalevisk/last-issue-action@v2.0
+      uses: micalevisk/last-issue-action@v2.3
       with:
         labels: 'report
 
