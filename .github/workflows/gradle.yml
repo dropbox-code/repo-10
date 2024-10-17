@@ -251,7 +251,7 @@ jobs:
         submodules: recursive
     - continue-on-error: true
       name: Set up JDK
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
         cache: gradle
         distribution: temurin
