@@ -271,7 +271,7 @@ jobs:
       run: node ./node-red/.github/scripts/update-node-red-docker.js
     - continue-on-error: true
       name: Create Docker Pull Request
-      uses: peter-evans/create-pull-request@v6
+      uses: peter-evans/create-pull-request@v7
       with:
         author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
         body: 'Updates the Node-RED Docker repo for the ${{ env.newVersion }} release.
@@ -293,7 +293,7 @@ jobs:
       run: node ./node-red/.github/scripts/update-node-red-website.js
     - continue-on-error: true
       name: Create Website Pull Request
-      uses: peter-evans/create-pull-request@v6
+      uses: peter-evans/create-pull-request@v7
       with:
         author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
         body: 'Updates the Node-RED Website repo for the ${{ env.newVersion }} release.
