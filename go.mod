@@ -33,18 +33,18 @@ require (
 	github.com/sirupsen/logrus v1.7.0
 	github.com/spf13/cobra v1.1.1
 	github.com/spf13/pflag v1.0.5
-	github.com/stretchr/testify v1.6.1
+	github.com/stretchr/testify v1.9.0
 	github.com/xeipuuv/gojsonschema v1.2.0
-	golang.org/x/crypto v0.0.0-20201002170205-7f63de1d35b0
-	k8s.io/api v0.20.1
+	golang.org/x/crypto v0.24.0
+	k8s.io/api v0.31.1
 	k8s.io/apiextensions-apiserver v0.20.1
-	k8s.io/apimachinery v0.20.1
+	k8s.io/apimachinery v0.31.1
 	k8s.io/apiserver v0.20.1
 	k8s.io/cli-runtime v0.20.1
-	k8s.io/client-go v0.20.1
-	k8s.io/klog/v2 v2.4.0
+	k8s.io/client-go v0.31.1
+	k8s.io/klog/v2 v2.130.1
 	k8s.io/kubectl v0.20.1
-	sigs.k8s.io/yaml v1.2.0
+	sigs.k8s.io/yaml v1.4.0
 )
 
 replace (
