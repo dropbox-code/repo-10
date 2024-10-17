@@ -255,7 +255,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
       id: semantic
       name: Semantic Release
-      uses: cycjimmy/semantic-release-action@v3
+      uses: cycjimmy/semantic-release-action@v4
       with:
         extra_plugins: 'conventional-changelog-conventionalcommits@latest
 
