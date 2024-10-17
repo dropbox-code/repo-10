@@ -556,7 +556,7 @@ jobs:
         '
     - continue-on-error: true
       name: Build wheels
-      uses: home-assistant/wheels@2023.04.0
+      uses: home-assistant/wheels@2024.07.1
       with:
         abi: cp310
         arch: amd64
