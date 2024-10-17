@@ -292,7 +292,7 @@ jobs:
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       name: Upload code coverage information to codecov.io
-      uses: codecov/codecov-action@125fc84a9a348dbcf27191600683ec096ec9021c
+      uses: codecov/codecov-action@b9fd7d16f6d7d1b5d2bec1a2887e65ceed900238
       with:
         fail_ci_if_error: true
         file: coverage.out
