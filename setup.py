@@ -81,7 +81,7 @@ install_requires = [
     'torch>=1.13.1,<2.1',
     'requests>=2.26.0,<3',
     'numpy>=1.21.5,<1.26.0',
-    'psutil>=5.8.0,<6',
+    'psutil>=5.8.0,<7',
     'coolname>=1.1.0,<3',
     'tabulate==0.9.0',  # for auto-generating tables
     'py-cpuinfo>=8.0.0,<10',
